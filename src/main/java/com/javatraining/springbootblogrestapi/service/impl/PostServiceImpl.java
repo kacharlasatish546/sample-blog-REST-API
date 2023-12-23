@@ -57,6 +57,7 @@ public class PostServiceImpl implements PostService {
         return postResponse;
     }
 
+    //Sample comment for testing gitdesktop
     @Override
     public PostDto getPostById(long id) {
         Post post = postRepository.findById(id).orElseThrow(() -> new ResourceNotFoundException("Post", "id", id));
