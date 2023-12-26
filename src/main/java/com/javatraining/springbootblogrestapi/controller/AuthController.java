@@ -3,7 +3,6 @@ package com.javatraining.springbootblogrestapi.controller;
 import com.javatraining.springbootblogrestapi.payload.LoginDto;
 import com.javatraining.springbootblogrestapi.payload.RegisterDto;
 import com.javatraining.springbootblogrestapi.service.AuthService;
-import org.apache.coyote.Response;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;

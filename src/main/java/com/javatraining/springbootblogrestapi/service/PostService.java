@@ -2,9 +2,6 @@ package com.javatraining.springbootblogrestapi.service;
 
 import com.javatraining.springbootblogrestapi.payload.PostDto;
 import com.javatraining.springbootblogrestapi.payload.PostResponse;
-import org.springframework.data.domain.Sort;
-
-import java.util.List;
 
 public interface PostService {
 
