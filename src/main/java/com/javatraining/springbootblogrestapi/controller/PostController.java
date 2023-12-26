@@ -1,6 +1,5 @@
 package com.javatraining.springbootblogrestapi.controller;
 
-import com.javatraining.springbootblogrestapi.entity.Post;
 import com.javatraining.springbootblogrestapi.payload.PostDto;
 import com.javatraining.springbootblogrestapi.payload.PostResponse;
 import com.javatraining.springbootblogrestapi.service.PostService;
@@ -11,7 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
+
 
 @RestController
 @RequestMapping("/api/posts")
