@@ -1,6 +1,5 @@
 package com.javatraining.springbootblogrestapi.service;
 
-import com.javatraining.springbootblogrestapi.entity.Post;
 import com.javatraining.springbootblogrestapi.payload.PostDto;
 import com.javatraining.springbootblogrestapi.payload.PostResponse;
 

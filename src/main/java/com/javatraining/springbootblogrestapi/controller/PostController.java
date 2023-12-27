@@ -56,7 +56,7 @@ public class PostController {
     @DeleteMapping("{id}")
     public ResponseEntity<String> deletePostById(@PathVariable("id") Long postId) {
         postService.deletePostById(postId);
-        return new ResponseEntity("Post Entity Successfully Deleted", HttpStatus.OK);
+        return ResponseEntity.ok("Post Entity Successfully Deleted");
     }
 
     @GetMapping("/category/{id}")
