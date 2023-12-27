@@ -9,7 +9,7 @@ import lombok.Data;
 @Data
 public class CommentDto {
 
-    private long id;
+    private Long id;
     @NotEmpty(message = "Name should not be empty")
     @Size(min = 4, message = "Name should have at least 4 chars")
     private String name;

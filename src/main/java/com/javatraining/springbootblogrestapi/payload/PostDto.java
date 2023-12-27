@@ -22,5 +22,6 @@ public class PostDto {
     @NotEmpty(message = "Title should not be empty")
     private String content;
     private Set<CommentDto> comments;
+    private Long categoryId;
 
 }

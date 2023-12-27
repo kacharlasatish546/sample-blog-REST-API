@@ -10,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 
 
 @RestController
@@ -48,14 +49,18 @@ public class PostController {
     @PreAuthorize("hasRole('ADMIN')")
     @PutMapping("{id}")
     public ResponseEntity<PostDto> updatePost(@Valid @PathVariable("id") long postId, @RequestBody PostDto postDto) {
-        System.out.println("@PathVariable long postId " + postId);
         return ResponseEntity.ok(postService.updatePost(postId, postDto));
     }
 
     @PreAuthorize("hasRole('ADMIN')")
     @DeleteMapping("{id}")
-    public ResponseEntity<String> deletePostById(@PathVariable("id") long postId) {
+    public ResponseEntity<String> deletePostById(@PathVariable("id") Long postId) {
         postService.deletePostById(postId);
         return new ResponseEntity("Post Entity Successfully Deleted", HttpStatus.OK);
+    }
+
+    @GetMapping("/category/{id}")
+    public ResponseEntity<List<PostDto>> getPostByCategoryId(@PathVariable("id") Long categoryId) {
+        return ResponseEntity.ok(postService.getPostsByCategoryId(categoryId));
     }
 }
