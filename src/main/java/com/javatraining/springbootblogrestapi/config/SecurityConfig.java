@@ -27,13 +27,13 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 )
 public class SecurityConfig {
 
-  
+
     private JwtAuthenticationEntryPoint authenticationEntryPoint;
     private JwtAuthenticationFilter authenticationFilter;
 
     public SecurityConfig(JwtAuthenticationEntryPoint authenticationEntryPoint,
                           JwtAuthenticationFilter authenticationFilter) {
-     
+
         this.authenticationEntryPoint = authenticationEntryPoint;
         this.authenticationFilter = authenticationFilter;
     }
@@ -62,7 +62,7 @@ public class SecurityConfig {
                 ).exceptionHandling(exception -> {
                     exception.authenticationEntryPoint(authenticationEntryPoint);
                 }).sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
-http.addFilterBefore(authenticationFilter, UsernamePasswordAuthenticationFilter.class);
+        http.addFilterBefore(authenticationFilter, UsernamePasswordAuthenticationFilter.class);
         return http.build();
     }
 //
