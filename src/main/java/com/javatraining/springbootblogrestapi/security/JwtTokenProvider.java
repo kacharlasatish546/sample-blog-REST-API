@@ -31,7 +31,6 @@ public class JwtTokenProvider {
                 .setExpiration(expirationDate)
                 .signWith(key())
                 .compact();
-
         return jwtToken;
     }
 
@@ -46,11 +45,8 @@ public class JwtTokenProvider {
                 .build()
                 .parseClaimsJws(token)
                 .getBody();
-
         String username = claims.getSubject();
-
         return username;
-
     }
 
     //validate the JWT Token
@@ -70,7 +66,5 @@ public class JwtTokenProvider {
         } catch (IllegalArgumentException ex) {
             throw new BlogAPIException(HttpStatus.BAD_REQUEST, "JWT claims string is empty");
         }
-
     }
-
 }

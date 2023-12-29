@@ -1,5 +1,6 @@
 package com.javatraining.springbootblogrestapi.controller;
 
+import com.javatraining.springbootblogrestapi.entity.Post;
 import com.javatraining.springbootblogrestapi.payload.PostDto;
 import com.javatraining.springbootblogrestapi.payload.PostResponse;
 import com.javatraining.springbootblogrestapi.service.PostService;
@@ -103,4 +104,10 @@ public class PostController {
     public ResponseEntity<List<PostDto>> getPostByCategoryId(@PathVariable("id") Long categoryId) {
         return ResponseEntity.ok(postService.getPostsByCategoryId(categoryId));
     }
+
+    @GetMapping("/search")
+    public ResponseEntity<List<Post>> searchPost(@RequestParam("query") String query) {
+        return ResponseEntity.ok(postService.searchPosts(query));
+    }
+
 }
