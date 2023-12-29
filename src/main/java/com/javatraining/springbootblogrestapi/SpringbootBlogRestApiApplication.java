@@ -37,7 +37,7 @@ import org.springframework.context.annotation.Bean;
 				url = "https://github.com/kacharlasatish546/sample-blog-REST-API"
 		)
 )
-public class SpringbootBlogRestApiApplication implements CommandLineRunner {
+public class SpringbootBlogRestApiApplication {
 
 	@Autowired
 	private RoleRepository roleRepository;
@@ -50,15 +50,15 @@ public class SpringbootBlogRestApiApplication implements CommandLineRunner {
 	public static void main(String[] args) {
 		SpringApplication.run(SpringbootBlogRestApiApplication.class, args);
 	}
-
-	@Override
-	public void run(String... args) throws Exception {
-		Role adminRole = new Role();
-		adminRole.setName("ROLE_ADMIN");
-		roleRepository.save(adminRole);
-
-		Role userRole = new Role();
-		userRole.setName("ROLE_USER");
-		roleRepository.save(userRole);
-	}
+//
+//	@Override
+//	public void run(String... args) throws Exception {
+//		Role adminRole = new Role();
+//		adminRole.setName("ROLE_ADMIN");
+//		roleRepository.save(adminRole);
+//
+//		Role userRole = new Role();
+//		userRole.setName("ROLE_USER");
+//		roleRepository.save(userRole);
+//	}
 }

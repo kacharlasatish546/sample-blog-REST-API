@@ -35,9 +35,11 @@ public class AuthController {
     }
 
     @PostMapping(value = {"/register", "/signup"})
-    public ResponseEntity<String> register(@RequestBody RegisterDto registerDto) {
-        String response = authService.register(registerDto);
-        return new ResponseEntity<>(response, HttpStatus.CREATED);
+    public ResponseEntity<JwtAuthResponse> register(@RequestBody RegisterDto registerDto) {
+        String token = authService.register(registerDto);
+        JwtAuthResponse jwtAuthResponse = new JwtAuthResponse();
+        jwtAuthResponse.setAccessToken(token);
+        return new ResponseEntity<>(jwtAuthResponse, HttpStatus.CREATED);
     }
 
 }
